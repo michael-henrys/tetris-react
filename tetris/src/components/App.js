@@ -8,6 +8,9 @@ function App() {
         <p>Tetris</p>
       </header>
       <GameArea />
+      <footer>
+        <p>Michael henrys 2022</p>
+      </footer>
     </div>
   );
 }

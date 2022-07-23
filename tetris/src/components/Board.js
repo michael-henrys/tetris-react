@@ -6,12 +6,12 @@ export default function Board({board}) {
           <tr>
             {board[rowIndex].map((cell, cellIndex) => {
               return (
-                <td></td>
-              )})}
+                <td className={cell.color}></td>
+              )
+            })}
           </tr>
         )
       })}
-
     </table>
   )
 }
