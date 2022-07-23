@@ -1,0 +1,14 @@
+.GameArea{
+  width: 300px;
+  height: auto;
+  margin-right: center;
+  margin-left: center;
+  margin: 0 auto;
+}
+
+td {
+  background-color: lightgrey;
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+}
