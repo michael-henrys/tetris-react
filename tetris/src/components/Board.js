@@ -1,7 +1,17 @@
-export default function Board() {
+export default function Board({board}) {
   return (
     <table>
-      
+      {board.map((row, rowIndex) => {
+        return (
+          <tr>
+            {board[rowIndex].map((cell, cellIndex) => {
+              return (
+                <td></td>
+              )})}
+          </tr>
+        )
+      })}
+
     </table>
   )
 }
