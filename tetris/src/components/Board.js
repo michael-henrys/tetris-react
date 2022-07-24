@@ -2,12 +2,24 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import createBoard from '../game/createBoard';
 
-export default function Board() {
+export default function Board({ tetronimos }) {
   const [board, setBoard] = useState([]);
 
   useEffect(() => {
     setBoard(createBoard());
   }, []);
+
+  useEffect(() => {
+    const newBoard = createBoard()
+    tetronimos.forEach(tetronimo => {
+      tetronimo.cells.forEach(cell => {
+        newBoard[cell[1]][cell[0]] = {
+          type: tetronimo.type
+        }
+      })
+    })
+    setBoard(newBoard)
+  }, [tetronimos])
 
   return (
     <table>
@@ -16,7 +28,7 @@ export default function Board() {
           <tr>
             {board[rowIndex].map((cell, cellIndex) => {
               return (
-                <td className='empty'></td>
+                <td className={cell.type}></td>
               )
             })}
           </tr>
